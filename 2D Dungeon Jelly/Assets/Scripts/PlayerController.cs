@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private float horizontalMove;
     private bool isGrounded;
     public float checkRadius;
+    public float hangTime;
+    private float hangCounter;
     private Rigidbody2D rb;
     public Animator animator;
     public Transform groundCheck;
@@ -35,10 +37,15 @@ public class PlayerController : MonoBehaviour
         horizontalMove = moveInput * speed;
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
+        
         if (isGrounded == true)
         {
             extraJumps = extraJumpsValue;
+            hangCounter = hangTime;
+        }
+        else
+        {
+            hangCounter -= Time.deltaTime;
         }
 
         if (Input.GetButtonDown("Jump") && extraJumps > 0)
@@ -46,9 +53,13 @@ public class PlayerController : MonoBehaviour
             Jump();
             extraJumps--;
         }
-        else if (Input.GetButtonDown("Jump") && extraJumps == 0 && isGrounded == true)
+        else if (Input.GetButtonDown("Jump") && extraJumps == 0 && hangCounter > 0)
         {
             Jump();
+        }
+        else if(Input.GetButtonUp("Jump") && rb.velocity.y > 0)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
     }
 
@@ -60,7 +71,7 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
-        else if(facingRight == true && moveInput < 0)
+        else if (facingRight == true && moveInput < 0)
         {
             Flip();
         }
@@ -68,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        rb.velocity = Vector2.up * jumpForce;
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         CreateDust(jumpDust);
     }
 

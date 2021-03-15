@@ -5,7 +5,7 @@ using TMPro;
 
 public class CoinPicker : MonoBehaviour
 {
-    private int coin = 0;
+    static private int coin = 0;
 
     public TextMeshProUGUI txtCoins;
 
@@ -14,5 +14,9 @@ public class CoinPicker : MonoBehaviour
             coin++;
             txtCoins.text = coin.ToString();
         }
+    }
+
+    void Start() {
+        txtCoins.text = coin.ToString();
     }
 }
