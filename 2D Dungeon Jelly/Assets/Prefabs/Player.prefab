@@ -9711,6 +9711,7 @@ GameObject:
   - component: {fileID: 1206783338256401721}
   - component: {fileID: 1206783338256401719}
   - component: {fileID: 1206783338256401716}
+  - component: {fileID: 2064885490}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -9881,6 +9882,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txtCoins: {fileID: 0}
+--- !u!114 &2064885490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206783338256401725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d849d81c18582244887101eef2a178ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathParticles: {fileID: 3328548106224678138, guid: e7f2d385b0763ff47809118b6e53bdeb, type: 3}
 --- !u!1 &1206783338483632447
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
-public class SceneLoader : MonoBehaviour
+public class NextSceneLoader : MonoBehaviour
 {
-    public string nextLevel;
+    public int nextLevel;
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Player"){
-            SceneManager.LoadScene(nextLevel);
+            SceneManager.LoadScene("Level0" + nextLevel.ToString());
         }
     }
 }
