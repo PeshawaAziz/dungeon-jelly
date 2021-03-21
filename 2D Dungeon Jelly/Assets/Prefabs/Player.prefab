@@ -9860,7 +9860,7 @@ MonoBehaviour:
   speed: 6
   jumpForce: 16
   extraJumpsValue: 0
-  checkRadius: 0.1
+  checkRadius: 0.15
   hangTime: 0.05
   animator: {fileID: 1206783338256401722}
   groundCheck: {fileID: 1206783338506285735}
@@ -9895,6 +9895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 3328548106224678138, guid: e7f2d385b0763ff47809118b6e53bdeb, type: 3}
+  sceneRestart: {fileID: 1995136518761440651, guid: 3d853cc87c02443468edf1c18c13640e, type: 3}
 --- !u!1 &1206783338483632447
 GameObject:
   m_ObjectHideFlags: 0
@@ -9984,7 +9985,7 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.19540198
       - serializedVersion: 3
-        time: 0.71721333
+        time: 0.90475464
         value: 0
         inSlope: -2.7576478
         outSlope: -2.7576478
